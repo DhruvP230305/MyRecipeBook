@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Details - MyRecipeBook</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">
+          <i class="fas fa-utensils"></i>
+          <h1>MyRecipeBook</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">All Recipes</a></li>
+          <li><a href="add-recipe.html">Add Recipe</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <a href="recipes.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Recipes</a>
+      
+      <article class="recipe-detail" id="recipe-detail">
+        <!-- Recipe details will be populated here by JavaScript -->
+        <div class="recipe-detail-skeleton">
+          <div class="recipe-image-skeleton"></div>
+          <div class="recipe-content-skeleton">
+            <div class="title-skeleton"></div>
+            <div class="meta-skeleton"></div>
+            <div class="ingredients-skeleton">
+              <div class="ingredient-line"></div>
+              <div class="ingredient-line"></div>
+              <div class="ingredient-line"></div>
+              <div class="ingredient-line"></div>
+            </div>
+            <div class="steps-skeleton">
+              <div class="step-line"></div>
+              <div class="step-line"></div>
+              <div class="step-line"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-utensils"></i>
+          <h2>MyRecipeBook</h2>
+        </div>
+        <p>Your personal recipe collection - created with love</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      displayRecipeDetail();
+      initMobileMenu();
+    });
+  </script>
+</body>
+</html>

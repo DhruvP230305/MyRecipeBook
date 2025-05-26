@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Recipe - MyRecipeBook</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="logo">
+          <i class="fas fa-utensils"></i>
+          <h1>MyRecipeBook</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">All Recipes</a></li>
+          <li><a href="add-recipe.html" class="active">Add Recipe</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="add-recipe-section">
+        <h2 class="section-title" id="form-title">Add New Recipe</h2>
+        
+        <form id="recipe-form" class="recipe-form">
+          <div class="form-group">
+            <label for="recipe-title">Recipe Title*</label>
+            <input type="text" id="recipe-title" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="recipe-description">Description*</label>
+            <textarea id="recipe-description" rows="3" required></textarea>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prep-time">Prep Time (minutes)*</label>
+              <input type="number" id="prep-time" min="0" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="cook-time">Cook Time (minutes)*</label>
+              <input type="number" id="cook-time" min="0" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="servings">Servings*</label>
+              <input type="number" id="servings" min="1" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="recipe-category">Category*</label>
+            <select id="recipe-category" required>
+              <option value="">Select a category</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Gluten-Free">Gluten-Free</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="recipe-tags">Tags (comma separated)</label>
+            <input type="text" id="recipe-tags" placeholder="e.g. quick, spicy, summer">
+          </div>
+          
+          <div class="form-group">
+            <label>Ingredients*</label>
+            <div id="ingredients-container">
+              <div class="ingredient-input-group">
+                <input type="text" class="ingredient-input" placeholder="e.g. 2 cups flour" required>
+                <button type="button" class="remove-ingredient-btn"><i class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <button type="button" id="add-ingredient-btn" class="btn btn-outline">
+              <i class="fas fa-plus"></i> Add Ingredient
+            </button>
+          </div>
+          
+          <div class="form-group">
+            <label>Steps*</label>
+            <div id="steps-container">
+              <div class="step-input-group">
+                <span class="step-number">1</span>
+                <textarea class="step-input" rows="2" placeholder="Describe this step" required></textarea>
+                <button type="button" class="remove-step-btn"><i class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <button type="button" id="add-step-btn" class="btn btn-outline">
+              <i class="fas fa-plus"></i> Add Step
+            </button>
+          </div>
+          
+          <div class="form-group">
+            <label for="recipe-image">Image URL*</label>
+            <input type="url" id="recipe-image" placeholder="https://example.com/image.jpg" required>
+            <div class="image-preview-container">
+              <div id="image-preview" class="image-preview">
+                <i class="fas fa-image"></i>
+                <span>Image preview will appear here</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="featured-recipe">
+            <label for="featured-recipe">Feature this recipe on homepage</label>
+          </div>
+          
+          <div class="form-actions">
+            <a href="recipes.html" class="btn btn-outline">Cancel</a>
+            <button type="submit" class="btn btn-primary" id="save-button">Save Recipe</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-utensils"></i>
+          <h2>MyRecipeBook</h2>
+        </div>
+        <p>Your personal recipe collection - created with love</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initAddRecipePage();
+      initMobileMenu();
+    });
+  </script>
+</body>
+</html>
